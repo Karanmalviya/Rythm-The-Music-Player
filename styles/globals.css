@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
+@layer components {
+  .button {
+    @apply h-7 w-7 transform cursor-pointer transition duration-100 ease-out hover:scale-125;
+  }
+}
+
+.button-volume {
+  @apply h-5 w-5 transform cursor-pointer transition duration-100 ease-out hover:scale-125;
+}
+
+.mbhw {
+  @apply h-[3rem] w-[3rem];
+}
+.ply-btn {
+<<<<<<< HEAD
+  @apply xm:ml-[8rem] xm:-my-[0.4rem];
+=======
+  @apply xm:h-2 xm:w-2 xm:ml-[8rem] xm:my-[0.2rem];
+>>>>>>> 342843398a632b8cb2f0ac9c48a766012fa9c1e8
+}
+.text-para {
+  @apply xm:mt-3.5 xm:mx-3 xm:text-xs xm:font-thin;
+}
+.sidebar-container {
+  @apply bottom-0 xm:sticky;
+}
+.playlist-image {
+  @apply xm:max-h-[8rem] xm:max-w-[8rem];
+}
+.ply-hide {
+  @apply sm:invisible group-hover:xm:invisible;
+}
+.box {
+  @apply xm:h-[3rem] xm:w-[11rem];
+}
+.anim {
+  @apply visible translate-y-2 transform duration-500 ease-in-out hover:translate-y-0;
+}
