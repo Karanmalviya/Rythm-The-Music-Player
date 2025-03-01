@@ -7,11 +7,7 @@ export default function Songs() {
   return (
     <div>
       <div>
-<<<<<<< HEAD
 
-=======
-        
->>>>>>> 342843398a632b8cb2f0ac9c48a766012fa9c1e8
       </div>
     <div className="text-white px-8 flex flex-col space-y-1 pb-18">
       {playlist?.tracks.items.map((track, i) => (
@@ -21,7 +17,4 @@ export default function Songs() {
     </div>
   )
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> 342843398a632b8cb2f0ac9c48a766012fa9c1e8

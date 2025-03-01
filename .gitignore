@@ -8,12 +8,9 @@
 # testing
 /coverage
 
-<<<<<<< HEAD
 #vscode
 /.vscode
 
-=======
->>>>>>> 342843398a632b8cb2f0ac9c48a766012fa9c1e8
 # next.js
 /.next/
 /out/
@@ -31,7 +28,6 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
-.env.local
 .env.development.local
 .env.test.local
 .env.production.local
@@ -41,3 +37,4 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+config.bat

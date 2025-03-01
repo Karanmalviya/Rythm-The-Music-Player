@@ -2,26 +2,17 @@ import React from 'react'
 import IMAGES from '../public/images/images'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-<<<<<<< HEAD
-import SongFire from './Firebase_music/SongFire'
-=======
->>>>>>> 342843398a632b8cb2f0ac9c48a766012fa9c1e8
+import SongFire from '../Components/SongFire'
 
 function SongList() {
   return (
     <React.Fragment>
       <div className="mt-10 ml-[3rem] ">
-<<<<<<< HEAD
-        <h2 className="mb-6 flex flex-wrap text-2xl font-bold text-white">
+        <h2 className="mb-6 flex flex-wrap text-2xl font-bold text-yellow-500">
           Popular Hits
         </h2>
         <div className="mb-24 flex flex-wrap gap-x-7 gap-y-5">
           {/* {[
-=======
-        <h2 className="mb-6 flex flex-wrap text-2xl font-bold">Popular Hits</h2>
-        <div className="mb-24 flex flex-wrap gap-x-7 gap-y-5">
-          {[
->>>>>>> 342843398a632b8cb2f0ac9c48a766012fa9c1e8
             {
               Name: 'Folk',
               imgs: IMAGES.logofolk,
@@ -112,7 +103,6 @@ function SongList() {
               imgs: IMAGES.logopop,
               description: 'Beautiful instrumental music',
             },
-<<<<<<< HEAD
           ]. */}
 
           {SongFire &&
@@ -151,30 +141,6 @@ function SongList() {
                 </div>
               </motion.div>
             ))}
-=======
-          ].map((item, index) => (
-            <motion.div
-              whileInView={{ opacity: 1 }}
-              whileHover={{ scale: 1.1 }}
-              transition={{ duration: 0.5, type: 'tween' }}
-              key={item.Name + index}
-            >
-              <div className="h-56 w-44 justify-center rounded-md border-0 bg-blue-100 bg-opacity-10 hover:bg-opacity-[.14]">
-                <div className="flex justify-center">
-                  <div className="mt-[0.8rem] overflow-hidden rounded-md border-0 ">
-                    <Image src={item.imgs} height={145} width={145}  alt=""/>
-                  </div>
-                </div>
-                <div className="mt-3 ml-4 mr-4 truncate">
-                  <h2 className="text-sm">{item.Name}</h2>
-                  <p className="truncate text-sm text-gray-400">
-                    {item.description}
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-          ))}
->>>>>>> 342843398a632b8cb2f0ac9c48a766012fa9c1e8
         </div>
       </div>
     </React.Fragment>

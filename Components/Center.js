@@ -2,32 +2,19 @@
 import IMAGES from '../public/images/images.js'
 import Image from 'next/image'
 import SongsList from './SongList'
-<<<<<<< HEAD
-// import { motion } from 'framer-motion'
-=======
 import { motion } from 'framer-motion'
->>>>>>> 342843398a632b8cb2f0ac9c48a766012fa9c1e8
 
 export default function Center() {
   var day = new Date()
   var hours = day.getHours()
   var greet = ''
-<<<<<<< HEAD
-// console.log(hours)
-=======
 
->>>>>>> 342843398a632b8cb2f0ac9c48a766012fa9c1e8
   ;(() => {
     if (hours >= 5 && hours <= 11) greet = 'Good Morning'
     else if (hours == 12) greet = 'Good Afternoon'
     else if (hours >= 13 && hours <= 17) greet = 'Good Afternoon '
-<<<<<<< HEAD
-    else if (hours >= 18 && hours < 22) greet = 'Good Evening '
-    else if (hours >= 22 && hours <= 11) greet = 'Good Night'
-=======
     else if (hours > 18 && hours <= 20) greet = 'Good Evening '
     else if (hours >= 21 && hours >= 11) greet = 'Good Night'
->>>>>>> 342843398a632b8cb2f0ac9c48a766012fa9c1e8
     else greet = 'Wow! You`re still awake. Working Late?'
   })()
   return (
@@ -74,15 +61,9 @@ export default function Center() {
                 {item.name}
               </p>
 
-<<<<<<< HEAD
               <div className="ply-btn fixed h-10 w-10 sm:my-[.1rem] sm:ml-[10.5rem] md:my-2.4 md:ml-[10.5rem] lg:my-[0.6rem] lg:ml-[20rem]">
                 <Image
                   src={IMAGES.logoplaybtn1}
-=======
-              <div className="ply-btn fixed h-10 w-10 sm:my-2.5 sm:ml-[10.5rem] md:my-2.5 md:ml-[10.5rem] lg:my-[1.2rem] lg:ml-[20rem]">
-                <Image
-                  src={IMAGES.logoplaybtn}
->>>>>>> 342843398a632b8cb2f0ac9c48a766012fa9c1e8
                   alt=""
                   className="ply-hide invisible group-hover:visible"
                 />

@@ -33,10 +33,6 @@ const IMAGES = {
   logoneverending: require('./neverending.jpg').default,
   logomusic: require('./music.jpg').default,
   logoheavymetal: require('./heavymetal.jpg').default,
-<<<<<<< HEAD
-  logo404: require('./404.gif').default,
-=======
->>>>>>> 342843398a632b8cb2f0ac9c48a766012fa9c1e8
 }
 
 export default IMAGES

@@ -1,8 +1,8 @@
 import { useRecoilState } from 'recoil'
 import { useEffect, useState, useRef } from 'react'
-import { currentTrackIdState, isPlayingState } from '../../Atoms/SongAtom'
+import { currentTrackIdState, isPlayingState } from '../Atoms/SongAtom'
 
-// import useSongInfo from '../Hooks/useSongInfo'
+import useSongInfo from '../Hooks/useSongInfo'
 import {
   HeartIcon,
   VolumeUpIcon as VolumeDownIcon,
@@ -67,7 +67,7 @@ export default function MusicPlayer({
     const returnSec = seconds < 10 ? `0${seconds}` : `${seconds}`
     return `${returnMin} : ${returnSec}`
   }
-  // console.log(calculateTime)
+
   const changeCurrentTime = () => {
     progressBar.current.style.setProperty(
       '--played-width',
@@ -85,7 +85,7 @@ export default function MusicPlayer({
     setLoved(!isLove)
   }
 
-  // const songInfo = useSongInfo()
+  const songInfo = useSongInfo()
   return (
     <div className="fixed bottom-0">
       <div className="bg-black">
@@ -94,12 +94,12 @@ export default function MusicPlayer({
 
           <input
             type="range"
-            // className=""
+            className="progressBar"
             ref={progressBar}
             onChange={changeProgress}
             defaultValue="0"
             autoPlay={auto}
-            className="progressBar mt-3 h-[0.1rem] w-[72rem] cursor-pointer "
+            class="mt-3 h-[0.1rem] w-[72rem] bg-gray-400 text-green-500"
           />
 
           <div className="">
@@ -111,8 +111,8 @@ export default function MusicPlayer({
         <audio src={song} preload="metadata" ref={audioPlayer} />
       </div>
       <div
-        className="grid-col-0 grid h-20 grid-cols-3 
-    divide-gray-800 bg-gradient-to-b from-black to-gray-900 px-2 text-xs 
+        className="grid-col-0 grid h-20 grid-cols-3  
+     bg-gradient-to-b from-black to-gray-900 px-2 text-xs 
     text-white md:px-8 md:text-base"
       >
         {/* Left */}
