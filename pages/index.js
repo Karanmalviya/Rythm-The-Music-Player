@@ -11,10 +11,8 @@ import Accountlogo from '../Components/Accountlogo'
 import Search from '../Components/Search'
 import React, { useEffect, useState } from 'react'
 import Loading from '../Components/loader'
-<<<<<<< HEAD
-import Firebase from '../Components/Firebase_music/Firebase_music'
-=======
->>>>>>> 342843398a632b8cb2f0ac9c48a766012fa9c1e8
+import Demo from '../Components/demo'
+import MusicPlayer from '../Components/MusicPlayer'
 
 export default function Home() {
   let [comp, setComp] = useState('')
@@ -29,36 +27,6 @@ export default function Home() {
 
   // return <div>{loading ? "loading..." : "hello"}</div>;
 
-<<<<<<< HEAD
-  const [player, setPlayer] = useState(true)
-
-  const handleCenter = () => {
-    setComp('Center')
-    setPlayer(true)
-  }
-  const handleSearch = () => {
-    setComp('Search')
-    setPlayer(true)
-  }
-  const handleLiked = () => {
-    setComp('Liked')
-    setPlayer(true)
-  }
-  const handleLibrary = () => {
-    setComp('Library')
-    setPlayer(true)
-  }
-  const handlePlaylist = () => {
-    setComp('Playlist')
-    setPlayer(true)
-  }
-  const handleFirebase = () => {
-    setComp('Firebase')
-    setPlayer(true)
-  }
-  const handlePlayer = () => {
-    setPlayer(false)
-=======
   const handleCenter = () => {
     setComp('Center')
   }
@@ -73,7 +41,6 @@ export default function Home() {
   }
   const handlePlaylist = () => {
     setComp('Playlist')
->>>>>>> 342843398a632b8cb2f0ac9c48a766012fa9c1e8
   }
   return (
     <div>
@@ -92,11 +59,6 @@ export default function Home() {
               showLiked={handleLiked}
               showLibrary={handleLibrary}
               showPlaylist={handlePlaylist}
-<<<<<<< HEAD
-              showfire={handleFirebase}
-              setPlayer={handlePlayer}
-=======
->>>>>>> 342843398a632b8cb2f0ac9c48a766012fa9c1e8
             />
             <Accountlogo />
             {(() => {
@@ -108,12 +70,7 @@ export default function Home() {
                 case 'Library':
                   return <Library />
                 case 'Playlist':
-                  return <Playlist />
-<<<<<<< HEAD
-                case 'Firebase':
-                  return <Firebase />
-=======
->>>>>>> 342843398a632b8cb2f0ac9c48a766012fa9c1e8
+                  return <Demo />
                 default:
                   return <Center />
               }
@@ -123,14 +80,8 @@ export default function Home() {
           </main>
 
           <div className="sticky bottom-0">
-<<<<<<< HEAD
             {/* <Player /> */}
             {/* <MusicPlayer/> */}
-
-            {player ? <Player /> : null}
-=======
-            <Player />
->>>>>>> 342843398a632b8cb2f0ac9c48a766012fa9c1e8
           </div>
         </div>
       )}
@@ -147,8 +98,3 @@ export async function getServerSideProps(context) {
     },
   }
 }
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 342843398a632b8cb2f0ac9c48a766012fa9c1e8

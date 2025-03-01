@@ -8,12 +8,9 @@
 # testing
 /coverage
 
-<<<<<<< HEAD
 #vscode
 /.vscode
 
-=======
->>>>>>> 342843398a632b8cb2f0ac9c48a766012fa9c1e8
 # next.js
 /.next/
 /out/

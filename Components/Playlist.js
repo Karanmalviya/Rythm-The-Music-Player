@@ -37,11 +37,7 @@ export default function Playlist() {
       })
       .catch((err) => console.log('Something went wrong!', err))
   }, [spotifyApi, playlistId])
-<<<<<<< HEAD
-  // console.log(playlist)
-=======
   console.log(playlist)
->>>>>>> 342843398a632b8cb2f0ac9c48a766012fa9c1e8
 
   return (
     <div className="h-screen flex-grow select-none overflow-y-scroll text-white scrollbar-hide">

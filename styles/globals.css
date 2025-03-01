@@ -17,11 +17,7 @@
   @apply h-[3rem] w-[3rem];
 }
 .ply-btn {
-<<<<<<< HEAD
   @apply xm:ml-[8rem] xm:-my-[0.4rem];
-=======
-  @apply xm:h-2 xm:w-2 xm:ml-[8rem] xm:my-[0.2rem];
->>>>>>> 342843398a632b8cb2f0ac9c48a766012fa9c1e8
 }
 .text-para {
   @apply xm:mt-3.5 xm:mx-3 xm:text-xs xm:font-thin;

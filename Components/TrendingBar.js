@@ -20,13 +20,8 @@ export default function TrendingBar() {
         <Swiper
           spaceBetween={50}
           slidesPerView={3}
-<<<<<<< HEAD
-          // onSlideChange={() => console.log('slide change')}
-          // onSwiper={(swiper) => console.log(swiper)}
-=======
           onSlideChange={() => console.log('slide change')}
           onSwiper={(swiper) => console.log(swiper)}
->>>>>>> 342843398a632b8cb2f0ac9c48a766012fa9c1e8
           className="text-white"
           modules={[Autoplay]}
           autoplay={{ delay: 2000 }}

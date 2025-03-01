@@ -28,11 +28,7 @@ export default function Player() {
   const fetchCurrentSong = () => {
     if (!songInfo) {
       spotifyApi.getMyCurrentPlayingTrack().then((data) => {
-<<<<<<< HEAD
-        // console.log('Now Playing', data.body?.item)
-=======
         console.log('Now Playing', data.body?.item)
->>>>>>> 342843398a632b8cb2f0ac9c48a766012fa9c1e8
         setCurrentIdTrack(data.body?.item?.id)
 
         spotifyApi.getMyCurrentPlaybackState().then((data) => {
@@ -41,11 +37,7 @@ export default function Player() {
       })
     }
   }
-<<<<<<< HEAD
-  
-=======
 
->>>>>>> 342843398a632b8cb2f0ac9c48a766012fa9c1e8
   const handlePlayPause = () => {
     spotifyApi.getMyCurrentPlaybackState().then((data) => {
       if (data?.body?.is_playing) {

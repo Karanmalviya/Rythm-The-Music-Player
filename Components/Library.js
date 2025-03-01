@@ -24,7 +24,6 @@ function Library() {
             },
             {
               Name: 'Rock',
-<<<<<<< HEAD
               imgs: IMAGES.logorock,
               description: 'Beautiful instrumental music',
             },
@@ -103,11 +102,6 @@ function Library() {
               imgs: IMAGES.logopop,
               description: 'Beautiful instrumental music',
             },
-=======
-              imgs: IMAGES.logoinstrumental,
-              description: 'Beautiful instrumental music',
-            },
->>>>>>> 342843398a632b8cb2f0ac9c48a766012fa9c1e8
           ].map((item, index) => (
             <div
               key={item.Name + index}

@@ -1,12 +1,109 @@
-import React from 'react'
-
+import React, { useEffect, useRef, useState } from 'react'
+import { shuffle } from 'lodash'
+import SongFire from '../Components/SongFire'
+import { HeartIcon } from '@heroicons/react/outline'
+import { HeartIcon as HeartIconSolid } from '@heroicons/react/solid'
+import MusicPlayer from '../Components/MusicPlayer'
+import Image from 'next/image'
+import IMAGES from '../public/images/images'
 function demo() {
+  const colors = [
+    'from-indigo-500',
+    'from-blue-500',
+    'from-green-500',
+    'from-red-500',
+    'from-yellow-500',
+    'from-pink-500',
+    'from-purple-500',
+    'from-red-500',
+  ]
+
+  const [Songs, setSongsFire] = useState(SongFire)
+  const [song, setSong] = useState(SongFire[0].song)
+  const [img, setImage] = useState(SongFire[0].imgSrc)
+  const [songNameU, setSongName] = useState(SongFire[0].songName)
+  const [songArtist, setSongArtist] = useState(SongFire[0].artist)
+  const [auto, setAuto] = useState(false)
+
+  const [color, setColor] = useState(null)
+
+  const changeFavorite = (id) => {
+    SongFire.forEach((song) => {
+      if (song.id === id) {
+        song.favourite = !song.favourite
+      }
+    })
+    setSongsFire([...SongFire])
+  }
+
+  useEffect(() => {
+    setColor(shuffle(colors).pop())
+  }, [])
+
+  const setMainSong = (songSrc, imgSrc, songname,songartist) => {
+    setSong(songSrc)
+    setImage(imgSrc)
+    setSongName(songname)
+    setSongArtist(songartist)
+    setAuto(true)
+  }
+
   return (
-    <div className="text-white">
-      <path
-        d="M37.2 17.4229v-4.8h2.2l3.6 4.8h3.76l-3.92-5.1C44.68 11.643 46 9.88295 46 7.82295c0-2.66-2.18-4.8-4.84-4.8H34V17.4229h3.2zm0-11.51995H41c.88 0 1.8.86 1.8 1.92s-.92 1.92-1.8 1.92h-3.8v-3.84zM46.8695 6.62295l4.44 9.52005-2.2 4.8799h3.34l6.56-14.39995h-3.26l-2.82 6.21995-2.8-6.21995h-3.26zM60.0533 3.02295v8.99995c0 3.16 2.28 5.72 5.6 5.72h.4v-2.72c-1.66 0-3-1.34-3-3V9.18295h3v-2.56h-3v-3.6h-3zM67.9453 17.4229h3v-5.42c0-1.64.94-2.97995 2.6-2.97995 1.66 0 2.6 1.33995 2.6 2.99995v5.4h3v-5.4c0-3.15995-2.28-5.71995-5.6-5.71995-1 0-1.9.36-2.6.96v-4.24h-3V17.4229zM80.9508 12.0229v5.4h3v-5.4c0-1.66.74-2.99995 2.4-2.99995s2.4 1.33995 2.4 2.99995v5.4h3v-5.4c0-1.66.74-2.99995 2.4-2.99995s2.4 1.33995 2.4 2.99995v5.4h3v-5.4c0-3.15995-2.08-5.71995-5.4-5.71995-1.56 0-2.96.7-3.9 1.82-.94-1.12-2.34-1.82-3.9-1.82-3.32 0-5.4 2.56-5.4 5.71995z"
-        fill="#fff"
-      ></path>
+    <div className="h-screen flex-grow select-none overflow-y-scroll text-white scrollbar-hide">
+      <section
+        className={`flex h-80 items-end space-x-7 bg-gradient-to-b to-black  p-5 ${color} text-white`}
+      >
+        <div className="playlist-image h-44 w-44 shadow-2xl">
+          <Image src={IMAGES.logoromantic} alt="" />
+        </div>
+        <div>
+          <p>Party Hits</p>
+          <h1 className="text-2xl font-bold md:text-3xl xl:text-5xl"> </h1>
+          <p className="text-xs text-gray-400">{Songs.length} Songs</p>
+        </div>
+      </section>
+
+      <div className="mb-24 mt-3 gap-y-4">
+        {/* <Songs /> */}
+        {Songs &&
+          Songs.map((song, index) => (
+            <div
+              key={song?.id}
+              onClick={() =>
+                setMainSong(song?.song, song?.imgSrc, song?.songName ,song?.artist)
+              }
+              className="grid select-none grid-cols-2 scroll-smooth rounded-lg py-5 px-4 text-gray-500 hover:bg-gray-900"
+            >
+              <div className="flex items-center space-x-4">
+                <p>{index + 1}</p>
+                <img className="h-10 w-10" src={song.imgSrc} alt="" />
+                <div className="truncate">
+                  <p className="w-30 m-2 truncate text-white lg:w-64">
+                    {song.songName}
+                  </p>
+                  {/* <p className="w-30  m-2">{song.artist}</p> */}
+                </div>
+              </div>
+              <div className="ml-auto flex items-center justify-between md:ml-0">
+                <p className="hidden w-40 truncate md:inline">{song.artist}</p>
+                {/* <p>{millisToMinutesAndSeconds(song.artist)}</p> */}
+                <div
+                  onClick={() => changeFavorite(song?.id)}
+                  className="h-5 w-5 cursor-pointer text-green-600 "
+                >
+                  {song?.favourite ? <HeartIconSolid /> : <HeartIcon />}
+                </div>
+              </div>
+            </div>
+          ))}
+      </div>
+      <MusicPlayer
+        song={song}
+        imgSrc={img}
+        songname={songNameU}
+        songartist={songArtist}
+        autoplay={auto}
+      />
     </div>
   )
 }
